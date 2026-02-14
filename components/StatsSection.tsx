@@ -60,7 +60,7 @@ export const StatsSection: React.FC = () => {
         
         {daily && (
           <motion.a
-            href={daily.link}
+            href={`www.leetcode.com${daily.link}`}
             target="_blank"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
