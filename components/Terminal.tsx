@@ -28,7 +28,9 @@ export const Terminal: React.FC = () => {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    // block: 'nearest' ensures the container scrolls to show the element 
+    // without forcing the entire page to scroll if it's already in view.
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, [history]);
 
   const handleCommand = (e: React.KeyboardEvent) => {

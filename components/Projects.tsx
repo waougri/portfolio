@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 import { PROJECTS } from '../utils/data.ts';
 
-const ProjectCard = ({ project, index }: { project: any, index: number }) => {
+const ProjectCard: React.FC<{ project: any; index: number }> = ({ project, index }) => {
   const ref = useRef<HTMLDivElement>(null);
   
   const x = useMotionValue(0);

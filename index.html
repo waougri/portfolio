@@ -7,14 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Space Grotesk', 'sans-serif'],
+              sans: ['Inter', 'sans-serif'],
               mono: ['JetBrains Mono', 'monospace'],
             },
             colors: {
@@ -30,12 +30,27 @@
                 green: '#a6e3a1',
                 peach: '#fab387',
                 red: '#f38ba8',
-                lavender: '#b4befe'
+                lavender: '#b4befe',
+                sky: '#89dceb',
+                sapphire: '#74c7ec',
+                yellow: '#f9e2af'
               }
             },
-            backgroundImage: {
-              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-              'grid-pattern': "linear-gradient(to right, #313244 1px, transparent 1px), linear-gradient(to bottom, #313244 1px, transparent 1px)",
+            animation: {
+              'blob': 'blob 7s infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              }
             }
           }
         }
@@ -46,6 +61,7 @@
         body {
             background-color: #1e1e2e;
             color: #cdd6f4;
+            font-family: 'Inter', sans-serif;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
@@ -65,27 +81,24 @@
             background: #585b70;
         }
 
-        /* Selection */
         ::selection {
             background: rgba(137, 180, 250, 0.2);
             color: #89b4fa;
         }
 
-        /* Utilities */
         .glass-panel {
-            background: rgba(30, 30, 46, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(205, 214, 244, 0.05);
-        }
-        
-        .text-glow {
-            text-shadow: 0 0 20px rgba(137, 180, 250, 0.5);
+            background: rgba(30, 30, 46, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(205, 214, 244, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
         }
 
         .bg-grid {
             background-size: 40px 40px;
-            mask-image: linear-gradient(to bottom, transparent, black, transparent);
-            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+            background-image: linear-gradient(to right, rgba(49, 50, 68, 0.5) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(49, 50, 68, 0.5) 1px, transparent 1px);
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
         }
     </style>
 
@@ -93,6 +106,7 @@
 {
   "imports": {
     "react": "https://esm.sh/react@18.3.1",
+    "react-dom": "https://esm.sh/react-dom@18.3.1",
     "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
     "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
     "framer-motion": "https://esm.sh/framer-motion@11.0.8?external=react,react-dom",
