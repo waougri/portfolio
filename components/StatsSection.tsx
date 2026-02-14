@@ -34,7 +34,7 @@ export const StatsSection: React.FC = () => {
     return (
       <div className="py-24 flex flex-col items-center justify-center space-y-6">
         <div className="w-16 h-16 border-[3px] border-ctp-blue/10 border-t-ctp-blue rounded-full animate-spin"></div>
-        <div className="text-xs font-mono text-ctp-overlay1 uppercase tracking-[0.4em] animate-pulse">Establishing Uplink...</div>
+        <div className="text-xs font-mono text-ctp-overlay1 uppercase tracking-[0.2em] animate-pulse">Fetching LeetCode data...</div>
       </div>
     );
   }
@@ -53,14 +53,14 @@ export const StatsSection: React.FC = () => {
       <div className="mb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
         <div>
            <h2 className="text-4xl font-bold mb-3 flex items-center gap-3">
-            <span className="text-ctp-blue">02.</span> Telemetry
+            <span className="text-ctp-blue">02.</span> Live Stats
           </h2>
-          <p className="text-ctp-subtext0 font-medium opacity-80">Real-time performance metrics synced from LeetCode core.</p>
+          <p className="text-ctp-subtext0 font-medium opacity-80">I like to keep my problem-solving skills sharp. Here's my current status.</p>
         </div>
         
         {daily && (
           <motion.a
-            href={`www.leetcode.com${daily.link}`}
+            href={daily.link}
             target="_blank"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -71,7 +71,7 @@ export const StatsSection: React.FC = () => {
               <Zap className="w-5 h-5 text-ctp-blue" />
             </div>
             <div className="text-left pr-4">
-              <div className="text-[10px] uppercase font-bold text-ctp-overlay1 tracking-widest mb-1">Daily Protocol</div>
+              <div className="text-[10px] uppercase font-bold text-ctp-overlay1 tracking-widest mb-1">Daily Challenge</div>
               <div className="text-sm font-bold text-ctp-text">{daily.question.title}</div>
             </div>
             <ExternalLink className="w-4 h-4 text-ctp-overlay1 group-hover:text-ctp-blue transition-colors" />
@@ -129,7 +129,7 @@ export const StatsSection: React.FC = () => {
           <div className="flex items-center justify-between mb-12 z-10">
             <div className="flex items-center">
               <Activity className="w-6 h-6 text-ctp-green mr-4" />
-              <h3 className="text-2xl font-bold text-ctp-text">Algorithmic Distribution</h3>
+              <h3 className="text-2xl font-bold text-ctp-text">Problem Distribution</h3>
             </div>
           </div>
 
@@ -197,10 +197,10 @@ export const StatsSection: React.FC = () => {
           <div className="flex items-center justify-between mb-16 z-10 relative">
             <div className="flex items-center">
               <Code2 className="w-7 h-7 text-ctp-mauve mr-4" />
-              <h3 className="text-2xl font-bold text-ctp-text">Stack Composition</h3>
+              <h3 className="text-2xl font-bold text-ctp-text">Languages</h3>
             </div>
             <div className="text-[10px] font-mono text-ctp-overlay1 bg-ctp-crust/50 px-5 py-2 rounded-full border border-ctp-surface0 uppercase tracking-widest font-bold">
-                Systems Oriented
+                Systems Focused
             </div>
           </div>
           

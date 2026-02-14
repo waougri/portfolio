@@ -5,7 +5,6 @@ import { Terminal } from './components/Terminal.tsx';
 import { StatsSection } from './components/StatsSection.tsx';
 import { Projects } from './components/Projects.tsx';
 import { Experience } from './components/Experience.tsx';
-import { Assistant } from './components/Assistant.tsx';
 
 const App: React.FC = () => {
   const [currentSection, setCurrentSection] = useState('hero');
@@ -32,10 +31,8 @@ const App: React.FC = () => {
         <Experience />
       </main>
 
-      <Assistant />
-      
       <footer className="py-8 text-center text-ctp-overlay1 text-sm">
-        <p>© 2025 Ayman Ougri. Engineered with React, Tailwind & Gemini.</p>
+        <p>© 2025 Ayman Ougri. Built with coffee & vim.</p>
       </footer>
     </div>
   );

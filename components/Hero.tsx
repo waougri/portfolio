@@ -20,20 +20,20 @@ export const Hero: React.FC = () => {
             className="flex items-center gap-2 mb-8"
           >
             <div className="h-[1px] w-12 bg-ctp-blue" />
-            <span className="text-ctp-blue font-mono text-sm tracking-widest uppercase">Systems Architect</span>
+            <span className="text-ctp-blue font-mono text-sm tracking-widest uppercase">Systems Engineer</span>
           </motion.div>
 
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-6xl md:text-8xl font-bold leading-tight mb-8"
+            className="text-5xl md:text-8xl font-bold leading-tight mb-8"
           >
-            Building the <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-ctp-blue via-ctp-mauve to-ctp-blue bg-[length:200%_auto] animate-gradient">
-              Infrastructure
+            Hey, I'm Ayman. <br />
+            I build <span className="text-transparent bg-clip-text bg-gradient-to-r from-ctp-blue via-ctp-mauve to-ctp-blue bg-[length:200%_auto] animate-gradient">
+              fast systems
             </span> <br />
-            of Tomorrow.
+            that scale.
           </motion.h1>
 
           <motion.p
@@ -42,7 +42,7 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-ctp-subtext0 max-w-2xl mb-12 leading-relaxed"
           >
-            I'm <span className="text-ctp-text font-semibold">Ayman Ougri</span>. A software engineer specializing in high-performance distributed systems, low-level optimization, and scalable backend architecture.
+            I'm a software engineer who loves digging into low-level code. Whether it's optimizing C++ servers or designing distributed architecture, I care about performance, clean code, and building things that actually work.
           </motion.p>
 
           <motion.div
@@ -54,7 +54,7 @@ export const Hero: React.FC = () => {
             <a href="#projects" className="group relative px-8 py-4 bg-ctp-blue text-ctp-base font-bold rounded-lg overflow-hidden transition-all hover:scale-105 active:scale-95">
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               <span className="relative flex items-center gap-2">
-                View Work <ArrowRight size={18} />
+                Check out my work <ArrowRight size={18} />
               </span>
             </a>
 

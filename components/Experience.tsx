@@ -8,7 +8,7 @@ export const Experience: React.FC = () => {
       <div className="grid lg:grid-cols-3 gap-16">
         <div className="lg:col-span-2">
           <h2 className="text-4xl font-bold mb-12 flex items-center gap-3">
-            <span className="text-ctp-blue">03.</span> Experience
+            <span className="text-ctp-blue">03.</span> Where I've Worked
           </h2>
           
           <div className="space-y-12 relative before:absolute before:left-[7px] before:top-2 before:bottom-0 before:w-[2px] before:bg-ctp-surface0">
@@ -42,7 +42,7 @@ export const Experience: React.FC = () => {
         </div>
 
         <div>
-          <h2 className="text-2xl font-bold mb-8">Technical Proficiency</h2>
+          <h2 className="text-2xl font-bold mb-8">What I'm Good At</h2>
           <div className="space-y-6">
             {SKILLS.map((skill, idx) => (
               <div key={idx}>
