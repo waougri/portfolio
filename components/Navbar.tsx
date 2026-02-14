@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Home, User, Briefcase, Cpu, Terminal } from 'lucide-react';
+import { Home, User, Briefcase, Cpu, Activity } from 'lucide-react';
 
 interface NavbarProps {
   currentSection: string;
@@ -11,8 +11,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentSection, onNavigate }) =>
   const items = [
     { id: 'hero', icon: Home, label: 'Home' },
     { id: 'about', icon: User, label: 'About' },
-    { id: 'work', icon: Briefcase, label: 'Work' },
+    { id: 'stats', icon: Activity, label: 'Stats' },
     { id: 'projects', icon: Cpu, label: 'Projects' },
+    { id: 'work', icon: Briefcase, label: 'Work' },
   ];
 
   return (

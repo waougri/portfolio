@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar.tsx';
 import { Hero } from './components/Hero.tsx';
 import { Terminal } from './components/Terminal.tsx';
+import { StatsSection } from './components/StatsSection.tsx';
 import { Projects } from './components/Projects.tsx';
 import { Experience } from './components/Experience.tsx';
 import { Assistant } from './components/Assistant.tsx';
@@ -26,6 +27,7 @@ const App: React.FC = () => {
       <main className="relative z-10 pb-32">
         <Hero />
         <Terminal />
+        <StatsSection />
         <Projects />
         <Experience />
       </main>
