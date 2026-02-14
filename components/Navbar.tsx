@@ -1,61 +1,54 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Github, Code, Layout, BarChart3, MessageSquare, Briefcase } from 'lucide-react';
+import { Home, User, Briefcase, Cpu, Terminal } from 'lucide-react';
 
 interface NavbarProps {
-  activeTab: string;
-  setActiveTab: (tab: string) => void;
+  currentSection: string;
+  onNavigate: (section: string) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
-  const tabs = [
-    { id: 'home', label: 'Home', icon: Layout },
-    { id: 'experience', label: 'Work', icon: Briefcase },
-    { id: 'projects', label: 'Projects', icon: Code },
-    { id: 'stats', label: 'Stats', icon: BarChart3 },
-    { id: 'assistant', label: 'AI Assistant', icon: MessageSquare },
+export const Navbar: React.FC<NavbarProps> = ({ currentSection, onNavigate }) => {
+  const items = [
+    { id: 'hero', icon: Home, label: 'Home' },
+    { id: 'about', icon: User, label: 'About' },
+    { id: 'work', icon: Briefcase, label: 'Work' },
+    { id: 'projects', icon: Cpu, label: 'Projects' },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-6">
-      <div className="glass px-2 py-1.5 rounded-2xl flex items-center space-x-1 shadow-2xl">
-        <div className="flex items-center px-4 mr-4 border-r border-gray-800">
-          <Terminal className="w-5 h-5 text-blue-500 mr-2" />
-          <span className="font-bold text-sm tracking-tighter mono uppercase">Ayman.O</span>
-        </div>
-        
-        {tabs.map((tab) => {
-          const Icon = tab.icon;
-          const isActive = activeTab === tab.id;
+    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
+      <motion.nav 
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.5, type: 'spring', stiffness: 260, damping: 20 }}
+        className="flex items-center gap-2 px-3 py-3 rounded-full bg-ctp-base/80 backdrop-blur-xl border border-ctp-surface0/30 shadow-2xl shadow-black/50"
+      >
+        {items.map((item) => {
+          const isActive = currentSection === item.id;
+          const Icon = item.icon;
           
           return (
             <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 flex items-center space-x-2 ${
-                isActive ? 'text-white' : 'text-gray-400 hover:text-gray-200 hover:bg-gray-800/50'
+              key={item.id}
+              onClick={() => onNavigate(item.id)}
+              className={`relative px-4 py-3 rounded-full transition-all duration-300 group flex flex-col items-center justify-center ${
+                isActive ? 'text-ctp-base' : 'text-ctp-subtext0 hover:text-ctp-text'
               }`}
             >
-              <Icon className={`w-4 h-4 ${isActive ? 'text-blue-500' : ''}`} />
-              <span className="hidden lg:inline">{tab.label}</span>
               {isActive && (
                 <motion.div
-                  layoutId="navbar-indicator"
-                  className="absolute inset-0 bg-blue-500/10 border border-blue-500/20 rounded-xl -z-10"
-                  transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+                  layoutId="activeTab"
+                  className="absolute inset-0 bg-ctp-blue rounded-full"
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}
+              <span className="relative z-10 flex items-center justify-center">
+                <Icon size={20} strokeWidth={2.5} />
+              </span>
             </button>
           );
         })}
-
-        <div className="flex items-center px-4 ml-2 border-l border-gray-800 space-x-3">
-          <a href="https://github.com/waougri" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-            <Github className="w-5 h-5" />
-          </a>
-        </div>
-      </div>
-    </nav>
+      </motion.nav>
+    </div>
   );
 };

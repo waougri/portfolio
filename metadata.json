@@ -1,7 +1,5 @@
 {
   "name": "Ayman Ougri - Engineering Portfolio",
   "description": "A high-end developer portfolio featuring distributed systems, computer vision projects, and real-time LeetCode statistics.",
-  "requestFramePermissions": [
-    "camera"
-  ]
+  "requestFramePermissions": []
 }
